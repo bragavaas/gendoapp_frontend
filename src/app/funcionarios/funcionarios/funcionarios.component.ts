@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Funcionario } from '../model/funcionario';
 
 @Component({
   selector: 'app-funcionarios',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./funcionarios.component.css']
 })
 export class FuncionariosComponent implements OnInit {
+
+  funcionarios: Funcionario[] = [];
 
   constructor() { }
 

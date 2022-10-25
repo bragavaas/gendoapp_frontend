@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 
 import { FuncionariosRoutingModule } from './funcionarios-routing.module';
 import { FuncionariosComponent } from './funcionarios/funcionarios.component';
@@ -11,7 +12,8 @@ import { FuncionariosComponent } from './funcionarios/funcionarios.component';
   ],
   imports: [
     CommonModule,
-    FuncionariosRoutingModule
+    FuncionariosRoutingModule,
+    MatTableModule
   ]
 })
 export class FuncionariosModule { }
