@@ -12,11 +12,11 @@ import { FuncionariosService } from '../services/funcionarios.service';
 })
 export class FuncionariosComponent implements OnInit {
 
-  funcionarios: Observable<Funcionario[]>;
+  funcionarios$: Observable<Funcionario[]>;
   displayedColumns = ['nome', 'expediente', 'observacoes'];
 
   constructor(private funcionariosService: FuncionariosService ) {
-    this.funcionarios = this.funcionariosService.list();
+    this.funcionarios$ = this.funcionariosService.list();
   }
   
 
