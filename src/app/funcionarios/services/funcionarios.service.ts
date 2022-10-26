@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Funcionario } from '../model/funcionario';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/internal/operators/tap';
+import { delay } from 'rxjs';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class FuncionariosService {
   list() {
    return this.httpClient.get<Funcionario[]>(this.API)
    .pipe(
-    tap((funcionarios: any) => console.log(funcionarios))
-   );
+    delay(500)
+    );
   }
 }
