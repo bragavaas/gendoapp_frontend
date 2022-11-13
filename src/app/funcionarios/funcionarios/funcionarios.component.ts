@@ -16,7 +16,7 @@ import { FuncionariosService } from '../services/funcionarios.service';
 export class FuncionariosComponent implements OnInit {
 
   funcionarios$: Observable<Funcionario[]>;
-  displayedColumns = ['nome', 'expediente', 'observacoes', 'acoes'];
+  displayedColumns = ['_id','nome', 'expediente', 'observacoes', 'acoes'];
 
   constructor(
     private funcionariosService: FuncionariosService,

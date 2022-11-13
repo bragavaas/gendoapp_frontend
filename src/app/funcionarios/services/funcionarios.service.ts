@@ -10,7 +10,7 @@ import { delay } from 'rxjs';
 })
 export class FuncionariosService {
 
-  private readonly API = '/assets/funcionarios.json';
+  private readonly API = 'api/funcionarios';
   constructor(private httpClient: HttpClient ) {  }
 
   list() {
