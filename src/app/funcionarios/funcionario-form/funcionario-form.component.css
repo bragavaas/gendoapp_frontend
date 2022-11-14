@@ -1,0 +1,18 @@
+mat-card{
+    width: 30%;
+    padding: 20px;
+    margin: 2em auto;
+    text-align: center;
+}
+.form-card mat-card-header{
+    text-align: center;
+}
+
+.form-input{
+    width: 100%;
+}
+
+.min-width{
+    width: 100%;
+    min-width: 150px;
+}

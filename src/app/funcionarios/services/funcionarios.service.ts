@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Funcionario } from '../model/funcionario';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/internal/operators/tap';
-import { delay } from 'rxjs';
+import { delay, first } from 'rxjs';
 
 
 @Injectable({
@@ -18,5 +18,9 @@ export class FuncionariosService {
    .pipe(
     delay(500)
     );
+  }
+  
+  save(record: Funcionario){
+    return this.httpClient.post<Funcionario>(this.API, record).pipe(first());
   }
 }

@@ -5,17 +5,21 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FuncionariosRoutingModule } from './funcionarios-routing.module';
 import { FuncionariosComponent } from './funcionarios/funcionarios.component';
+import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    FuncionariosComponent
+    FuncionariosComponent,
+    FuncionarioFormComponent
   ],
   imports: [
     CommonModule,
     FuncionariosRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class FuncionariosModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
@@ -20,7 +21,9 @@ export class FuncionariosComponent implements OnInit {
 
   constructor(
     private funcionariosService: FuncionariosService,
-    public dialog: MatDialog 
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
     ) {
     this.funcionarios$ = this.funcionariosService.list()
     .pipe(
@@ -41,5 +44,8 @@ export class FuncionariosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAdd(){
+      this.router.navigate(['create'], {relativeTo: this.route});
+  }
 }
 
