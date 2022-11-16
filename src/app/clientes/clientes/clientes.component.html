@@ -1,83 +1,76 @@
 <mat-card>
-    <mat-toolbar>
-      <span>Funcionários</span>
-      <span class="example-spacer"></span>
-      <button
-        (click)="onAdd()"
-        mat-stroked-button color="primary"
-        class="cadastrar-btn"
-        aria-label="Example icon-button with add icon"
-      > 
-        Cadastrar Funcionário
-        <mat-icon>add</mat-icon>
-      </button>
-    </mat-toolbar>
-  
-    <div *ngIf="funcionarios$ | async as funcionarios; else loading">
-      <table mat-table [dataSource]="funcionarios" class="mat-elevation-z8">
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
-        <!-- Position Column -->
-        <ng-container matColumnDef="_id">
-          <th mat-header-cell *matHeaderCellDef>id</th>
-          <td mat-cell *matCellDef="let funcionario">{{ funcionario._id }}</td>
-        </ng-container>
-  
-        <!-- Position Column -->
-        <ng-container matColumnDef="nome">
-          <th mat-header-cell *matHeaderCellDef>Nome</th>
-          <td mat-cell *matCellDef="let funcionario">{{ funcionario.nome }}</td>
-        </ng-container>
-  
-        <!-- Name Column -->
-        <ng-container matColumnDef="expediente">
-          <th mat-header-cell *matHeaderCellDef>Expediente</th>
-          <td mat-cell *matCellDef="let funcionario">
-            {{ funcionario.expediente }}
-          </td>
-        </ng-container>
-  
-        <!-- Weight Column -->
-        <ng-container matColumnDef="observacoes">
-          <th mat-header-cell *matHeaderCellDef>Observações</th>
-          <td mat-cell *matCellDef="let funcionario">
-            {{ funcionario.observacoes }}
-          </td>
-        </ng-container>
-  
-        <!-- Weight Column -->
-        <ng-container matColumnDef="acoes">
-          <th mat-header-cell *matHeaderCellDef>Ações</th>
-          <td mat-cell *matCellDef="let funcionario">
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="loupe"
-              class="action-icon"
-            ></mat-icon>
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="edit"
-              class="action-icon"
-            ></mat-icon>
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="delete"
-              class="action-icon"
-            ></mat-icon>
-          </td>
-        </ng-container>
-  
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
+  <mat-toolbar>
+    <span>Clientes</span>
+    <span class="example-spacer"></span>
+    <button
+      (click)="onAdd()"
+      mat-stroked-button
+      color="primary"
+      class="cadastrar-btn"
+      aria-label="Example icon-button with add icon"
+    >
+      Cadastrar Cliente
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div *ngIf="clientes$ | async as clientes; else loading">
+    <table mat-table [dataSource]="clientes" class="mat-elevation-z8">
+
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let cliente">{{ cliente.nome }}</td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let cliente">
+          {{ cliente.email }}
+        </td>
+      </ng-container>
+
+      <!-- Tel Column -->
+      <ng-container matColumnDef="telefone">
+        <th mat-header-cell *matHeaderCellDef>Telefone</th>
+        <td mat-cell *matCellDef="let cliente">
+          {{ cliente.telefone }}
+        </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let acoes">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="loupe"
+            class="action-icon"
+          ></mat-icon>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="edit"
+            class="action-icon"
+          ></mat-icon>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="delete"
+            class="action-icon"
+          ></mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <ng-template #loading>
+    <div class="loading-spinner">
+      <mat-spinner></mat-spinner>
     </div>
-    <ng-template #loading>
-      <div class="loading-spinner">
-        <mat-spinner></mat-spinner>
-      </div>
-    </ng-template>
-  </mat-card>
-  
+  </ng-template>
+</mat-card>
