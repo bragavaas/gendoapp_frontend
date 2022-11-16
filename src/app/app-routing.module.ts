@@ -8,6 +8,14 @@ const routes: Routes = [
   {
     path: 'funcionarios',
     loadChildren: () => import('./funcionarios/funcionarios.module').then(m => m.FuncionariosModule)
+  },
+  {
+    path: 'servicos',
+    loadChildren: () => import('./servicos/servicos.module').then(m => m.ServicosModule)
+  },
+  {
+    path: 'clientes',
+    loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
   }
 ];
 
