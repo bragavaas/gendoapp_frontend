@@ -6,10 +6,12 @@ import { SharedModule } from '../shared/shared.module';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 @NgModule({
   declarations: [
-    ClientesComponent
+    ClientesComponent,
+    ClienteFormComponent
   ],
   imports: [
     CommonModule,
