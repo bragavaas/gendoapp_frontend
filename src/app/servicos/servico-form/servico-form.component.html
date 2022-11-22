@@ -1,0 +1,35 @@
+<mat-card class="form-card">
+
+    <mat-card-header>
+      <mat-card-title style="text-align: center">Cadastrar novo Serviço</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form action="" [formGroup]="form" class="min-width">
+            <mat-form-field class="form-input">
+                <input matInput placeholder="Nome do Serviço" formControlName="nome_do_servico">
+            </mat-form-field>
+        
+            <mat-form-field class="form-input">
+                <input matInput placeholder="Duração do Serviço" formControlName="duracao_do_atendimento">
+            </mat-form-field>
+
+            <mat-form-field class="form-input">
+                <input matInput placeholder="Valor do Serviço" formControlName="valor_servico">
+            </mat-form-field>
+
+            <mat-form-field class="form-input">
+                <input matInput placeholder="Comissão" formControlName="comissao">
+            </mat-form-field>
+
+            <mat-form-field class="form-input">
+                <textarea matInput placeholder="Descrição do Serviço" formControlName="descricao"></textarea>
+            </mat-form-field>
+            
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Cadastrar</button>
+      <button mat-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
