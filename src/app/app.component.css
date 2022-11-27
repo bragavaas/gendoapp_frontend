@@ -1,0 +1,13 @@
+.menu-items span{
+    padding: 15px;
+    font-size: 16px;
+    transition: 0.3s;
+    color: #333;
+}
+.menu-items span:hover{
+    color: darkblue;
+    font-size: 18px;
+}
+.menu-items a{
+    text-decoration: none;
+}

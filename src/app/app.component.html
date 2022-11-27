@@ -1,5 +1,15 @@
 <mat-toolbar>
-  <span>Gendoapp</span>
+  <mat-toolbar-row>
+    <span>Gendoapp</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <div class="menu-items">
+      <a routerLink="/funcionarios"><span>Funcionários</span></a>
+      <a routerLink="/clientes"><span>Clientes</span></a>
+      <a routerLink="/servicos"><span>Serviços</span></a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
