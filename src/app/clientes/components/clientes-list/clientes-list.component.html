@@ -1,0 +1,52 @@
+<mat-table [dataSource]="clientes" class="mat-elevation-z8">
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let cliente">{{ cliente.nome }}</mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let cliente">
+        {{ cliente.email }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Tel Column -->
+    <ng-container matColumnDef="telefone">
+      <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+      <mat-cell *matCellDef="let cliente">
+        {{ cliente.telefone }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="acoes">
+      <mat-header-cell *matHeaderCellDef class="column-header">Ações</mat-header-cell>
+      <mat-cell *matCellDef="let acoes" class="action-column">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="loupe"
+          class="action-icon"
+        ></mat-icon>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="edit"
+          class="action-icon"
+        ></mat-icon>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="delete"
+          class="action-icon"
+        ></mat-icon>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../model/cliente';
+import { Cliente } from '../../model/cliente';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientesService } from '../services/clientes.service';
+import { ClientesService } from '../../services/clientes.service';
 
 @Component({
   selector: 'app-clientes',
@@ -16,7 +16,6 @@ import { ClientesService } from '../services/clientes.service';
 export class ClientesComponent implements OnInit {
 
   clientes$: Observable<Cliente[]>;
-  displayedColumns = ['nome', 'email', 'telefone', 'acoes'];
 
   constructor(
     private clienteService: ClientesService,

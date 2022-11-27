@@ -1,17 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ClientesRoutingModule } from './clientes-routing.module';
-import { ClientesComponent } from './clientes/clientes.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import { ClientesListComponent } from './components/clientes-list/clientes-list.component';
+import { ClienteFormComponent } from './container/cliente-form/cliente-form.component';
+import { ClientesComponent } from './container/clientes/clientes.component';
 
 @NgModule({
   declarations: [
     ClientesComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    ClientesListComponent
   ],
   imports: [
     CommonModule,
