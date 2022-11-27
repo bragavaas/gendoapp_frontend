@@ -1,0 +1,52 @@
+<mat-table [dataSource]="funcionarios">
+  
+  <!-- Nome Column -->
+  <ng-container matColumnDef="nome">
+    <mat-header-cell  *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell  *matCellDef="let funcionario">{{ funcionario.nome }}</mat-cell>
+  </ng-container>
+  
+  <!-- Expediente Column -->
+  <ng-container matColumnDef="expediente">
+    <mat-header-cell  *matHeaderCellDef>Expediente</mat-header-cell>
+    <mat-cell  *matCellDef="let funcionario">
+      {{ funcionario.expediente }}
+    </mat-cell>
+  </ng-container>
+  
+  <!-- Observacao Column -->
+  <ng-container matColumnDef="observacoes">
+    <mat-header-cell  *matHeaderCellDef>Observações</mat-header-cell>
+    <mat-cell *matCellDef="let funcionario">
+      {{ funcionario.observacoes }}
+    </mat-cell>
+  </ng-container>
+  
+  <!-- Action Column -->
+  <ng-container matColumnDef="acoes">
+    <mat-header-cell  *matHeaderCellDef class="column-header">Ações</mat-header-cell>
+    <mat-cell  *matCellDef="let funcionario" class="action-column">
+      <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="loupe"
+      class="action-icon"
+      ></mat-icon>
+      <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="edit"
+      class="action-icon"
+      ></mat-icon>
+      <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="delete"
+      class="action-icon"
+      ></mat-icon>
+    </mat-cell>
+  </ng-container>
+  
+  <mat-header-row  *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row  *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

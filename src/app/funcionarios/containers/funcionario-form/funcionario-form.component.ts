@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FuncionariosService } from '../services/funcionarios.service';
+import { FuncionariosService } from '../../services/funcionarios.service';
 
 @Component({
   selector: 'app-funcionario-form',
@@ -11,21 +11,20 @@ import { FuncionariosService } from '../services/funcionarios.service';
 })
 export class FuncionarioFormComponent implements OnInit {
 
-  form: FormGroup;
+  form = this.formBuilder.group({
+    nome: [''],
+    celular: [''],
+    email: [''],
+    cpf: [''],
+    expediente: [''],
+    observacoes: ['']
+  });
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: NonNullableFormBuilder,
     private service: FuncionariosService,
     private snackBar: MatSnackBar,
     private location: Location
   ) { 
-    this.form = this.formBuilder.group({
-      nome: [null],
-      celular: [null],
-      email: [null],
-      cpf: [null],
-      expediente: [null],
-      observacoes: [null]
-    });
   }
 
   ngOnInit(): void {

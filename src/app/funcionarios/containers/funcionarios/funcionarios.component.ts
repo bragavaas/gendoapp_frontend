@@ -6,8 +6,8 @@ import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
-import { Funcionario } from '../model/funcionario';
-import { FuncionariosService } from '../services/funcionarios.service';
+import { Funcionario } from '../../model/funcionario';
+import { FuncionariosService } from '../../services/funcionarios.service';
 
 @Component({
   selector: 'app-funcionarios',
@@ -17,8 +17,7 @@ import { FuncionariosService } from '../services/funcionarios.service';
 export class FuncionariosComponent implements OnInit {
 
   funcionarios$: Observable<Funcionario[]>;
-  displayedColumns = ['_id','nome', 'expediente', 'observacoes', 'acoes'];
-
+  
   constructor(
     private funcionariosService: FuncionariosService,
     public dialog: MatDialog,

@@ -20,7 +20,7 @@ export class FuncionariosService {
     );
   }
   
-  save(record: Funcionario){
+  save(record: Partial<Funcionario>){
     return this.httpClient.post<Funcionario>(this.API, record).pipe(first());
   }
 }
