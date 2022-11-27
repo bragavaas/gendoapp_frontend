@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Servico } from '../model/servico';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/internal/operators/tap';
 import { delay, first } from 'rxjs';
 
 @Injectable({
@@ -19,11 +18,7 @@ export class ServicosService {
      );
    }
    
-   save(record: Servico){
+   save(record: Partial<Servico>){
      return this.httpClient.post<Servico>(this.API, record).pipe(first());
-   }
-
-   update(record: Servico){
-    return this.httpClient.put<Servico>(this.API, record).pipe(first());
    }
 }

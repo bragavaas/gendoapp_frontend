@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ServicoFormComponent } from './servico-form/servico-form.component';
-import { ServicosComponent } from './servicos/servicos.component';
+import { ServicoFormComponent } from './containers/servico-form/servico-form.component';
+import { ServicosComponent } from './containers/servicos/servicos.component';
 
 const routes: Routes = [
   { path: '', component: ServicosComponent },
-  { path: 'create', component: ServicoFormComponent },
-  { path: 'edit', component: ServicoFormComponent }
+  { path: 'create', component: ServicoFormComponent }
 ];
 
 @NgModule({

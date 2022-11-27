@@ -1,12 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Servico } from '../model/servico';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Servico } from '../../model/servico';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServicosService } from '../services/servicos.service';
+import { ServicosService } from '../../services/servicos.service';
 
 @Component({
   selector: 'app-clientes',
@@ -14,10 +14,8 @@ import { ServicosService } from '../services/servicos.service';
   styleUrls: ['./servicos.component.css']
 })
 export class ServicosComponent implements OnInit {
-  @Output() add = new EventEmitter(false);
-  @Output() edit = new EventEmitter(false);
+  
   servicos$: Observable<Servico[]>;
-  displayedColumns = ['nome_do_servico', 'duracao_do_atendimento', 'valor_servico', 'acoes'];
 
   constructor(
     private servicoService: ServicosService,
@@ -46,9 +44,6 @@ export class ServicosComponent implements OnInit {
 
   onAdd(){
     this.router.navigate(['create'], {relativeTo: this.route});
-  }
-  onEdit(servico: Servico){
-    this.edit.emit(servico);
   }
 
 }

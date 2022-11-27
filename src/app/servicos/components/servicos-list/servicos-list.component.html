@@ -1,0 +1,52 @@
+<mat-table [dataSource]="servicos" class="mat-elevation-z8">
+        
+    <!-- Nome do serviço Column -->
+    <ng-container matColumnDef="nome_do_servico">
+        <mat-header-cell *matHeaderCellDef>Nome do Serviço</mat-header-cell>
+        <mat-cell *matCellDef="let servico">{{ servico.nome_do_servico }}</mat-cell>
+    </ng-container>
+    
+    <!-- Expediente Column -->
+    <ng-container matColumnDef="duracao_do_atendimento">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Duração do Atendimento</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let servico">
+            {{ servico.duracao_do_atendimento }}
+        </mat-cell>
+    </ng-container>
+    
+    <!-- Expediente Column -->
+    <ng-container matColumnDef="valor_servico">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Valor</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let servico">
+            {{ servico.valor_servico }}
+        </mat-cell>
+    </ng-container>
+    
+    <!-- Action Column -->
+    <ng-container matColumnDef="acoes">
+        <mat-header-cell mat-header-cell *matHeaderCellDef class="column-header">Ações</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let servico" class="action-column">
+            <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="loupe"
+            class="action-icon"
+            ></mat-icon>
+            <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="edit"
+            class="action-icon"
+            ></mat-icon>
+            <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="delete"
+            class="action-icon"
+            ></mat-icon>
+        </mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

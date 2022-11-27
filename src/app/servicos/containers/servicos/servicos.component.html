@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-toolbar>
+        <span>Serviços</span>
+        <span class="example-spacer"></span>
+        <button
+        (click)="onAdd()"
+        mat-stroked-button color="primary"
+        class="cadastrar-btn"
+        aria-label="Example icon-button with add icon"
+        > 
+        Cadastrar Serviços
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="column-flex">
+    <app-servicos-list
+    *ngIf="servicos$ | async as servicos; else loading"
+    [servicos]="servicos"
+    (add)="onAdd()"
+    ></app-servicos-list>
+</div>
+<ng-template #loading>
+    <div class="loading-spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
+</mat-card>
