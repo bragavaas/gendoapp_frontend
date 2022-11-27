@@ -22,4 +22,8 @@ export class ServicosService {
    save(record: Servico){
      return this.httpClient.post<Servico>(this.API, record).pipe(first());
    }
+
+   update(record: Servico){
+    return this.httpClient.put<Servico>(this.API, record).pipe(first());
+   }
 }

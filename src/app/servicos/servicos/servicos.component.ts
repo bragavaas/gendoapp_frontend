@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Servico } from '../model/servico';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
@@ -14,7 +14,8 @@ import { ServicosService } from '../services/servicos.service';
   styleUrls: ['./servicos.component.css']
 })
 export class ServicosComponent implements OnInit {
-
+  @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
   servicos$: Observable<Servico[]>;
   displayedColumns = ['nome_do_servico', 'duracao_do_atendimento', 'valor_servico', 'acoes'];
 
@@ -45,6 +46,9 @@ export class ServicosComponent implements OnInit {
 
   onAdd(){
     this.router.navigate(['create'], {relativeTo: this.route});
+  }
+  onEdit(servico: Servico){
+    this.edit.emit(servico);
   }
 
 }

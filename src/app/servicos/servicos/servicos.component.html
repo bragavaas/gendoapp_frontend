@@ -25,23 +25,23 @@
         <!-- Expediente Column -->
         <ng-container matColumnDef="duracao_do_atendimento">
             <th mat-header-cell *matHeaderCellDef>Duração do Atendimento</th>
-            <td mat-cell *matCellDef="let funcionario">
-                {{ funcionario.duracao_do_atendimento }}
+            <td mat-cell *matCellDef="let servico">
+                {{ servico.duracao_do_atendimento }}
             </td>
         </ng-container>
         
         <!-- Expediente Column -->
         <ng-container matColumnDef="valor_servico">
             <th mat-header-cell *matHeaderCellDef>Valor</th>
-            <td mat-cell *matCellDef="let funcionario">
-                {{ funcionario.valor_servico }}
+            <td mat-cell *matCellDef="let servico">
+                {{ servico.valor_servico }}
             </td>
         </ng-container>
         
         <!-- Action Column -->
         <ng-container matColumnDef="acoes">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
-            <td mat-cell *matCellDef="let funcionario">
+            <td mat-cell *matCellDef="let servico">
                 <mat-icon
                 aria-hidden="false"
                 aria-label="Example home icon"
@@ -53,6 +53,7 @@
                 aria-label="Example home icon"
                 fontIcon="edit"
                 class="action-icon"
+                (click)="onEdit(servico)"
                 ></mat-icon>
                 <mat-icon
                 aria-hidden="false"
