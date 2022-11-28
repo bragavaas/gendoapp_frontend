@@ -13,6 +13,7 @@ export class ServicosListComponent implements OnInit {
   
   @Input() servicos: Servico[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
   constructor(
     private router: Router,
@@ -24,5 +25,8 @@ export class ServicosListComponent implements OnInit {
 
   onAdd() {
     this.add.emit(true);
+  }
+  onEdit(servico: Servico) {
+    this.edit.emit(servico);
   }
 }

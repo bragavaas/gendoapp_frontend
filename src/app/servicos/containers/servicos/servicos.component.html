@@ -17,7 +17,7 @@
     <app-servicos-list
     *ngIf="servicos$ | async as servicos; else loading"
     [servicos]="servicos"
-    (add)="onAdd()"
+    (edit)="onEdit($event)"
     ></app-servicos-list>
 </div>
 <ng-template #loading>

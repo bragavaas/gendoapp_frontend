@@ -46,5 +46,9 @@ export class FuncionariosComponent implements OnInit {
   onAdd(){
       this.router.navigate(['create'], {relativeTo: this.route});
   }
+
+  onEdit(funcionario: Funcionario) {
+    this.router.navigate(['edit', funcionario._id], {relativeTo: this.route});
+  }
 }
 

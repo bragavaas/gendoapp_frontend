@@ -13,6 +13,7 @@ export class ClientesListComponent implements OnInit {
 
   @Input() clientes: Cliente[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
   
   constructor(
     private router: Router,
@@ -21,7 +22,10 @@ export class ClientesListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onAdd(){
+  onAdd() {
     this.add.emit(true);
+  }
+  onEdit(cliente: Cliente) {
+    this.edit.emit(cliente);
   }
 }

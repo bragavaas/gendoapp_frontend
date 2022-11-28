@@ -25,7 +25,7 @@
     <!-- Action Column -->
     <ng-container matColumnDef="acoes">
       <mat-header-cell *matHeaderCellDef class="column-header">Ações</mat-header-cell>
-      <mat-cell *matCellDef="let acoes" class="action-column">
+      <mat-cell *matCellDef="let cliente" class="action-column">
         <mat-icon
           aria-hidden="false"
           aria-label="Example home icon"
@@ -37,6 +37,7 @@
           aria-label="Example home icon"
           fontIcon="edit"
           class="action-icon"
+          (click)="onEdit(cliente)"
         ></mat-icon>
         <mat-icon
           aria-hidden="false"

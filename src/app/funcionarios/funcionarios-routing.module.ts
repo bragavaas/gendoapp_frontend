@@ -6,7 +6,8 @@ import { FuncionariosComponent } from './containers/funcionarios/funcionarios.co
 
 const routes: Routes = [
   { path: '', component: FuncionariosComponent },
-  { path: 'create', component: FuncionarioFormComponent }
+  { path: 'create', component: FuncionarioFormComponent },
+  { path: 'edit/:id', component: FuncionarioFormComponent }
 ];
 
 @NgModule({

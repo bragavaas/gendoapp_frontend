@@ -46,4 +46,8 @@ export class ClientesComponent implements OnInit {
     this.router.navigate(['create'], {relativeTo: this.route});
   }
 
+  onEdit(cliente: Cliente) {
+    this.router.navigate(['edit', cliente._id], {relativeTo: this.route});
+  }
+
 }

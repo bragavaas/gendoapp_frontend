@@ -13,6 +13,7 @@ export class FuncionariosListComponent implements OnInit {
 
   @Input() funcionarios: Funcionario[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
   constructor(
     private router: Router,
@@ -24,5 +25,8 @@ export class FuncionariosListComponent implements OnInit {
 
   onAdd(){
     this.add.emit(true);
+  }
+  onEdit(funcionario: Funcionario) {
+    this.edit.emit(funcionario);
   }
 }

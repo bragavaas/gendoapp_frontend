@@ -18,7 +18,7 @@
       <app-funcionarios-list
       *ngIf="funcionarios$ | async as funcionarios; else loading"
       [funcionarios]="funcionarios"
-      (add)="onAdd()"
+      (edit)="onEdit($event)"
       ></app-funcionarios-list>
     </div>
     <ng-template #loading>

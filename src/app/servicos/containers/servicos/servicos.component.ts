@@ -46,4 +46,8 @@ export class ServicosComponent implements OnInit {
     this.router.navigate(['create'], {relativeTo: this.route});
   }
 
+  onEdit(servico: Servico) {
+    this.router.navigate(['edit', servico._id], {relativeTo: this.route});
+  }
+
 }

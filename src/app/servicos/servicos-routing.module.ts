@@ -6,7 +6,8 @@ import { ServicosComponent } from './containers/servicos/servicos.component';
 
 const routes: Routes = [
   { path: '', component: ServicosComponent },
-  { path: 'create', component: ServicoFormComponent }
+  { path: 'create', component: ServicoFormComponent },
+  { path: 'edit/:id', component: ServicoFormComponent }
 ];
 
 @NgModule({
