@@ -20,6 +20,10 @@ export class FuncionariosService {
     );
   }
   
+  loadByID(id: string) {
+    return this.httpClient.get<Funcionario>(`${this.API}/${id}`);
+  }
+
   save(record: Partial<Funcionario>){
     return this.httpClient.post<Funcionario>(this.API, record).pipe(first());
   }

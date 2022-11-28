@@ -17,6 +17,10 @@ export class ServicosService {
      delay(500)
      );
    }
+
+   loadByID(id: string) {
+    return this.httpClient.get<Servico>(`${this.API}/${id}`);
+   }
    
    save(record: Partial<Servico>){
      return this.httpClient.post<Servico>(this.API, record).pipe(first());
