@@ -1,7 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { Cliente } from '../../model/cliente';
+
 import { ClientesService } from '../../services/clientes.service';
 
 @Component({
@@ -12,6 +15,7 @@ import { ClientesService } from '../../services/clientes.service';
 export class ClienteFormComponent implements OnInit {
 
   form = this.formBuilder.group({
+    _id: [''],
     nome: [''],
     email: [''],
     telefone: ['']
@@ -21,11 +25,21 @@ export class ClienteFormComponent implements OnInit {
     private formBuilder: NonNullableFormBuilder,
     private service: ClientesService,
     private snackBar: MatSnackBar,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute
   ) { 
   }
 
   ngOnInit(): void {
+    const cliente: Cliente = this.route.snapshot.data['cliente'];
+    this.form.setValue(
+      {
+        _id: cliente._id,
+        nome: cliente.nome,
+        email: cliente.email,
+        telefone: cliente.telefone
+      }
+    )
   }
 
   onSubmit(){

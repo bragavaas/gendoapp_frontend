@@ -47,6 +47,7 @@ export class ServicosComponent implements OnInit {
   }
 
   onEdit(servico: Servico) {
+    console.log(servico);
     this.router.navigate(['edit', servico._id], {relativeTo: this.route});
   }
 

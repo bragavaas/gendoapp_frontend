@@ -12,7 +12,6 @@ import { ServicosService } from '../services/servicos.service';
   providedIn: 'root'
 })
 export class ServicoResolver implements Resolve<Servico> {
-   
   constructor(private service: ServicosService ){  }
   
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Servico> {

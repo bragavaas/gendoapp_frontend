@@ -10,7 +10,7 @@
     <ng-container matColumnDef="duracao_do_atendimento">
         <mat-header-cell mat-header-cell *matHeaderCellDef>Duração do Atendimento</mat-header-cell>
         <mat-cell mat-cell *matCellDef="let servico">
-            {{ servico.duracao_do_atendimento }}
+            {{ servico.duracao_do_atendimento }} min
         </mat-cell>
     </ng-container>
     
@@ -18,7 +18,7 @@
     <ng-container matColumnDef="valor_servico">
         <mat-header-cell mat-header-cell *matHeaderCellDef>Valor</mat-header-cell>
         <mat-cell mat-cell *matCellDef="let servico">
-            {{ servico.valor_servico }}
+            R$ {{ servico.valor_servico }},00
         </mat-cell>
     </ng-container>
     

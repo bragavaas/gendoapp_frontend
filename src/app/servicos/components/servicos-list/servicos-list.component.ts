@@ -28,5 +28,6 @@ export class ServicosListComponent implements OnInit {
   }
   onEdit(servico: Servico) {
     this.edit.emit(servico);
+    console.log(servico);
   }
 }

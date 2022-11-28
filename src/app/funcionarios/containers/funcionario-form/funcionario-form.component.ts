@@ -2,6 +2,8 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { Funcionario } from '../../model/funcionario';
 import { FuncionariosService } from '../../services/funcionarios.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { FuncionariosService } from '../../services/funcionarios.service';
 export class FuncionarioFormComponent implements OnInit {
 
   form = this.formBuilder.group({
+    _id: [''],
     nome: [''],
     celular: [''],
     email: [''],
@@ -23,11 +26,24 @@ export class FuncionarioFormComponent implements OnInit {
     private formBuilder: NonNullableFormBuilder,
     private service: FuncionariosService,
     private snackBar: MatSnackBar,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute
   ) { 
   }
 
   ngOnInit(): void {
+    const funcionario: Funcionario = this.route.snapshot.data['funcionario'];
+    this.form.setValue(
+      {
+        _id: funcionario._id,
+        nome: funcionario.nome,
+        celular: funcionario.celular,
+        email: funcionario.email,
+        cpf: funcionario.cpf,
+        expediente: funcionario.expediente,
+        observacoes: funcionario.expediente
+      }
+    )
   }
 
   onSubmit(){
